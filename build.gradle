@@ -3,27 +3,37 @@ plugins {
 }
 
 group = 'com.github.hazyhassan'
-version = '1.0.0'
+version = '1.0.3'
 
+// Dummy 'assemble' task (required by JitPack)
 tasks.register("assemble") {
     doLast {
         println("Dummy assemble task for JitPack")
     }
 }
 
+// Required by JitPack: publish to local Maven repository
 publishing {
     publications {
         ffmpeg(MavenPublication) {
             artifactId = 'ffmpeg-kit-full'
-             artifact file('libs/ffmpeg-kit-full-6.0-2.aar')
+            artifact file('libs/ffmpeg-kit-full-6.0-2.aar')
+            groupId = project.group
+            version = project.version
         }
+
         smartJava(MavenPublication) {
             artifactId = 'smart-exception-java'
             artifact file('libs/smart-exception-java-0.2.1.jar')
+            groupId = project.group
+            version = project.version
         }
+
         smartCommon(MavenPublication) {
             artifactId = 'smart-exception-common'
             artifact file('libs/smart-exception-common-0.2.1.jar')
+            groupId = project.group
+            version = project.version
         }
     }
 }
