@@ -5,11 +5,17 @@ plugins {
 group = 'com.github.hazyhassan'
 version = '1.0.0'
 
+tasks.register("assemble") {
+    doLast {
+        println("Dummy assemble task for JitPack")
+    }
+}
+
 publishing {
     publications {
         ffmpeg(MavenPublication) {
             artifactId = 'ffmpeg-kit-full-gpl'
-            artifact file('libs/ffmpeg-kit-full-6.0-2.aar')
+             artifact file('libs/ffmpeg-kit-full-6.0-2.aar')
         }
         smartJava(MavenPublication) {
             artifactId = 'smart-exception-java'
