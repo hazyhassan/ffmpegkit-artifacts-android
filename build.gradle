@@ -14,7 +14,7 @@ tasks.register("assemble") {
 publishing {
     publications {
         ffmpeg(MavenPublication) {
-            artifactId = 'ffmpeg-kit-full-gpl'
+            artifactId = 'ffmpeg-kit-full'
              artifact file('libs/ffmpeg-kit-full-6.0-2.aar')
         }
         smartJava(MavenPublication) {
