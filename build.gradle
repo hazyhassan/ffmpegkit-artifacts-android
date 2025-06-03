@@ -1,0 +1,23 @@
+plugins {
+    id 'maven-publish'
+}
+
+group = 'com.github.hazyhassan'
+version = '1.0.0'
+
+publishing {
+    publications {
+        ffmpeg(MavenPublication) {
+            artifactId = 'ffmpeg-kit-full-gpl'
+            artifact file('libs/ffmpeg-kit-full-6.0-2.aar')
+        }
+        smartJava(MavenPublication) {
+            artifactId = 'smart-exception-java'
+            artifact file('libs/smart-exception-java-0.2.1.jar')
+        }
+        smartCommon(MavenPublication) {
+            artifactId = 'smart-exception-common'
+            artifact file('libs/smart-exception-common-0.2.1.jar')
+        }
+    }
+}
